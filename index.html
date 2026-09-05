@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Câmera e Fotos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Câmera e Visualizador de Fotos</h1>
+        
+        <!-- Painel de Controles -->
+        <div class="controls-panel">
+            <button id="cameraBtn" class="btn btn-primary">📷 Abrir Câmera</button>
+            <button id="fileBtn" class="btn btn-secondary">🖼️ Selecionar Foto</button>
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            <button id="closeBtn" class="btn btn-danger" style="display: none;">✕ Fechar</button>
+        </div>
+
+        <!-- Área Principal -->
+        <div class="main-area">
+            <!-- Câmera -->
+            <video id="camera" class="media" style="display: none;"></video>
+            
+            <!-- Imagem -->
+            <div id="imageContainer" class="image-container" style="display: none;">
+                <img id="displayImage" class="media" alt="Foto selecionada">
+            </div>
+
+            <!-- Mensagem inicial -->
+            <div id="emptyState" class="empty-state">
+                <p>Clique em "Abrir Câmera" ou "Selecionar Foto" para começar</p>
+            </div>
+        </div>
+
+        <!-- Controles de Zoom e Navegação -->
+        <div class="zoom-controls" style="display: none;" id="zoomControls">
+            <button id="zoomOut" class="btn btn-small">🔍−</button>
+            <span id="zoomValue">100%</span>
+            <button id="zoomIn" class="btn btn-small">🔍+</button>
+            
+            <div class="separator"></div>
+            
+            <button id="moveLeft" class="btn btn-small">←</button>
+            <button id="moveRight" class="btn btn-small">→</button>
+            <button id="moveUp" class="btn btn-small">↑</button>
+            <button id="moveDown" class="btn btn-small">↓</button>
+            
+            <button id="resetView" class="btn btn-small">🔄 Reset</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
